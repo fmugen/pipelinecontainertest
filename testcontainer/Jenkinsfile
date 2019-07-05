@@ -4,11 +4,13 @@ pipeline {
         stage('checkout') {
             steps {
                 sh 'echo checkout'
+                checkout scm
             }
         }
         stage('build') {
             steps {
                 sh 'echo build'
+                sh Docker build .
             }
          }
          stage('test') {
