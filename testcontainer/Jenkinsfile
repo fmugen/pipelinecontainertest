@@ -10,7 +10,7 @@ pipeline {
         stage('build') {
             steps {
                 sh 'echo build'
-                sh 'docker build /home/ubuntu/pipelinecontainertest/testcontainer'
+                sh 'sudo docker build /home/ubuntu/pipelinecontainertest/testcontainer'
             }
          }
          stage('test') {
