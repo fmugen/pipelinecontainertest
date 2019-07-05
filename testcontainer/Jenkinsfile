@@ -1,1 +1,25 @@
-		stage('Deploy') {
+pipeleline {
+    agent {all}
+    stages {
+        stage('checkout') {
+            steps {
+
+            }
+        }
+        stage('build')
+            steps {
+
+            }
+         }
+         stage('test') {
+            steps {
+
+            }
+         }
+         stage('publish') {
+            steps {
+
+            }
+        }
+    }
+}
