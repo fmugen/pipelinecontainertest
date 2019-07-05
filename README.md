@@ -1,0 +1,2 @@
+# pipelinecontainertest
+パイプラインにて、コンテナを配布するテスト用のリポジトリ
