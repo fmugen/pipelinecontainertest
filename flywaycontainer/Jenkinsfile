@@ -1,0 +1,29 @@
+pipeline {
+    agent any
+    stages {
+        stage('checkout') {
+            steps {
+                sh 'echo checkout'
+                checkout scm
+            }
+        }
+        stage('build') {
+            steps {
+                sh 'echo build'
+                sh 'sudo docker build --rm -t test /home/ubuntu/pipelinecontainertest/testcontainer'
+            }
+         }
+         stage('test') {
+            steps {
+                sh 'echo test'
+
+            }
+         }
+         stage('publish') {
+            steps {
+                sh 'echo publish'
+
+            }
+        }
+    }
+}
