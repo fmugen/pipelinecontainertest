@@ -6,7 +6,7 @@ pipeleline {
 
             }
         }
-        stage('build')
+        stage('build') {
             steps {
 
             }
