@@ -10,7 +10,7 @@ pipeline {
         stage('build') {
             steps {
                 sh 'echo build'
-                sh Docker build .
+                sh 'Docker build .'
             }
          }
          stage('test') {
