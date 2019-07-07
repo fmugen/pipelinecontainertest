@@ -22,7 +22,7 @@ pipeline {
          stage('publish') {
             steps {
                 sh 'echo publish'
-                sh 'aws login'
+                sh 'echoS login'
                 sh 'aws ecr get-login --region ap-northeast-1 --profile ecr --no-include-email > /home/ubuntu/pipelinecontainertest/testcontainer/tmp.txt'
                 sh 'chmod u+x tmp.txt'
                 sh '`/home/ubuntu/pipelinecontainertest/testcontainer/tmp.txt`'
