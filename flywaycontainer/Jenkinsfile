@@ -10,7 +10,7 @@ pipeline {
         stage('build') {
             steps {
                 sh 'echo build'
-                sh 'sudo docker build --rm -t test /home/ubuntu/pipelinecontainertest/flywaycontainer'
+                sh 'sudo docker build --rm -t testflywaycontrainer /home/ubuntu/pipelinecontainertest/flywaycontainer'
             }
          }
          stage('test') {
