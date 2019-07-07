@@ -23,9 +23,9 @@ pipeline {
             steps {
                 sh 'echo publish'
                 sh 'echo login'
-                sh 'sudo aws ecr get-login --region ap-northeast-1 --profile ecr --no-include-email > tmp.txt'
+                sh 'aws ecr get-login --region ap-northeast-1 --profile ecr --no-include-email > tmp.txt'
                 sh 'chmod u+x ./tmp.txt'
-                sh '`sudo ./tmp.txt`'
+                sh '`./tmp.txt`'
                 sh 'rm ./tmp.txt'
                 sh 'echo tag'
                 sh 'docker tag testcontainer:latest 260863395501.dkr.ecr.ap-northeast-1.amazonaws.com/testrepository:latest'
