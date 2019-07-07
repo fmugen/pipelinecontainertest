@@ -23,7 +23,7 @@ pipeline {
             steps {
                 sh 'echo publish'
                 sh 'echo login'
-                sh 'aws ecr get-login --region ap-northeast-1 --profile ecr --no-include-email > tmp.txt'
+                sh 'sudo aws ecr get-login --region ap-northeast-1 --profile ecr --no-include-email > tmp.txt'
                 sh 'chmod u+x ./tmp.txt'
                 sh '`sudo ./tmp.txt`'
                 sh 'rm ./tmp.txt'
