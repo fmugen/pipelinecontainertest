@@ -10,7 +10,7 @@ pipeline {
         stage('build') {
             steps {
                 sh 'echo build'
-                sh 'docker build --rm -t testcontainer:latest /home/ubuntu/pipelinecontainertest/testcontainer'
+                sh 'sudo docker build --rm -t testcontainer:latest /home/ubuntu/pipelinecontainertest/testcontainer'
             }
          }
          stage('test') {
@@ -23,14 +23,14 @@ pipeline {
             steps {
                 sh 'echo publish'
                 sh 'echo login'
-                sh 'aws ecr get-login --region ap-northeast-1 --profile ecr --no-include-email > tmp.txt'
+                sh 'sudo aws ecr get-login --region ap-northeast-1 --profile ecr --no-include-email > tmp.txt'
                 sh 'chmod u+x ./tmp.txt'
-                sh '`./tmp.txt 1>/dev/null 2> /dev/null`'
+                sh '`sudo ./tmp.txt 1>/dev/null 2> /dev/null`'
                 sh 'rm ./tmp.txt'
                 sh 'echo tag'
-                sh 'docker tag testcontainer:latest 260863395501.dkr.ecr.ap-northeast-1.amazonaws.com/testrepository:latest'
+                sh 'sudo docker tag testcontainer:latest 260863395501.dkr.ecr.ap-northeast-1.amazonaws.com/testrepository:latest'
                 sh 'echo push'
-                sh 'docker push 260863395501.dkr.ecr.ap-northeast-1.amazonaws.com/testrepository:latest'
+                sh 'sudo docker push 260863395501.dkr.ecr.ap-northeast-1.amazonaws.com/testrepository:latest'
             }
         }
     }
